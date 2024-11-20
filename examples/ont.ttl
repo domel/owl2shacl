@@ -1,0 +1,37 @@
+@prefix : <http://example.org/ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+:ExampleOntology rdf:type owl:Ontology .
+
+# Classes
+:Person rdf:type owl:Class .
+:City rdf:type owl:Class .
+
+# Object properties
+:hasResidence rdf:type owl:ObjectProperty ;
+    rdfs:domain :Person ;
+    rdfs:range :City .
+
+# Data properties
+:hasName rdf:type owl:DatatypeProperty ;
+    rdfs:domain :Person ;
+    rdfs:range xsd:string .
+
+:population rdf:type owl:DatatypeProperty ;
+    rdfs:domain :City ;
+    rdfs:range xsd:integer .
+
+# Instances
+:John rdf:type :Person ;
+    :hasName "John Doe" ;
+    :hasResidence :London .
+
+:London rdf:type :City ;
+    :population 8900000 .
+
+:Paris rdf:type :City ;
+    :population 2148000 .
+
