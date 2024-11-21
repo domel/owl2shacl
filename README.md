@@ -42,6 +42,7 @@ python owl2shacl.py [OPTIONS] input_file
         nt
         turtle (default)
         xml
+```
 
 ### Example
 
